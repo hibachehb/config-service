@@ -1,0 +1,14 @@
+# Fichier : discovery-service.yml
+# Configuration pour Eureka Server
+
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-service
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
