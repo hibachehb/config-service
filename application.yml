@@ -1,0 +1,27 @@
+# Fichier : application.yml
+# Configuration COMMUNE à tous les microservices
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+    config:
+      enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVICE_URL:http://localhost:8761/eureka}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.cloud: INFO
+    ma.formations: INFO
